@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "332728220178",
+    "project_id": "jocards-7b8ce",
+    "storage_bucket": "jocards-7b8ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:332728220178:android:8eccca9b55e4cf7277b6cb",
+        "android_client_info": {
+          "package_name": "edu.bluejack22_1.JoCards"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "332728220178-hakutrafie7uq4gqj8m4otcjd374gf8d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.bluejack22_1.JoCards",
+            "certificate_hash": "e0d364a8022579e08e6e70e529542eb418561983"
+          }
+        },
+        {
+          "client_id": "332728220178-1u6m759m155puu09kn05ne5ksm7ujb2e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8pr3mr6WQnUAYjV5RCYkrtSC-0eCTzAI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "332728220178-1u6m759m155puu09kn05ne5ksm7ujb2e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
