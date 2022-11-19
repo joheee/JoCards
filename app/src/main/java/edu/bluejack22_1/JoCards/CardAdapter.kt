@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.ktx.Firebase
 import org.w3c.dom.Text
 
 class CardAdapter(private val cardList:ArrayList<Card>) : RecyclerView.Adapter<CardAdapter.CardViewHolder>() {
