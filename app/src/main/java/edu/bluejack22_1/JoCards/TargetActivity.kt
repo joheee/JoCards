@@ -73,15 +73,14 @@ class TargetActivity : AppCompatActivity() {
 
 
         fun calculateCharts () {
-            Log.v("jojojo", "recalculate $dailyCards $monthlyCards $targetDailyCards $targetMonthlyCards")
             var daily = ceil((dailyCards.toDouble() /targetDailyCards) * 100).toInt()
             var monthly = ceil((monthlyCards.toDouble() /targetMonthlyCards) * 100).toInt()
 
             dailyCardProgress.setProgressCompat(daily, true)
             monthlyCardProgress.setProgressCompat(monthly, true)
 
-            binding.dailyCardInformation.setText("${dailyCards}/${targetDailyCards} cards this day")
-            binding.monthlyCardInformation.setText("${monthlyCards}/${targetMonthlyCards} cards this month")
+            binding.dailyCardInformation.setText("${dailyCards}/${targetDailyCards} ${getString(R.string.daily_card_information)}")
+            binding.monthlyCardInformation.setText("${monthlyCards}/${targetMonthlyCards} ${getString(R.string.cards_this_month)}")
             binding.dailyCardPercentage.setText("${daily}%")
             binding.monthlyCardPercentage.setText("${monthly}%")
         }
@@ -134,7 +133,7 @@ class TargetActivity : AppCompatActivity() {
                 if(dailyCard.toInt() != 0 && monthlyCard.toInt() != 0) {
                     if(dailyCard.toInt() > monthlyCard.toInt()) {
                         if(progressDialog.isShowing) progressDialog.dismiss()
-                        popUpModal("daily target must be smaller than monthly target!")
+                        popUpModal("${getString(R.string.daily_target_must_be_smaller_than_monthly_target)}!")
                     } else {
                         db.collection("DailyCardTarget").document(userEmail).update(
                             mapOf(
@@ -149,7 +148,7 @@ class TargetActivity : AppCompatActivity() {
                                 ).addOnCompleteListener {
                                     if(it.isSuccessful) {
                                         if(progressDialog.isShowing) progressDialog.dismiss()
-                                        popUpModalUpdate("success update daily and monthly target!!")
+                                        popUpModalUpdate("${getString(R.string.success_update_daily_and_monthly_target)}!!")
                                     }
                                 }
                             }

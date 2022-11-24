@@ -14,19 +14,13 @@
         android:theme="@style/Theme.JoCards"
         tools:targetApi="31">
         <activity
-            android:name=".ClosingActivity"
+            android:name=".DummyViewPagerActivity"
             android:exported="false" />
         <activity
             android:name=".MemorizationDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".LandMemorizationActivity"
-            android:exported="false" />
-        <activity
             android:name=".MemorizationStartActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MemorizationStartingActivity"
             android:exported="false" />
         <activity
             android:name=".MyCardActivity"

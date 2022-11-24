@@ -66,7 +66,7 @@ class MemorizationStartActivity : AppCompatActivity() {
             cardList.sortBy { it.created }
             cardList.reverse()
             if(cardList.size == 0) binding.latestCardText.setText("Cards is empty...")
-            else binding.latestCardText.setText("Latest cards")
+            else binding.latestCardText.setText("${getString(R.string.latest_cards)}")
             cardMemorizationAdapter = CardMemorizationAdapter(cardList)
             cardRecycleView.adapter = cardMemorizationAdapter
 
@@ -107,7 +107,7 @@ class MemorizationStartActivity : AppCompatActivity() {
 
         binding.memorizeButton.setOnClickListener {
             if(Memorization.memorizationArr.size < 5) {
-                popUpModal("must picked 5 cards!")
+                popUpModal("${getString(R.string.must_picked_5_cards)}!")
             } else {
 
                 var progressDialog = ProgressDialog(this)

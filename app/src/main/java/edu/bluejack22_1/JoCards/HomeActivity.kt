@@ -10,7 +10,9 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.GestureDetector
 import android.view.Gravity
+import android.view.MotionEvent
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -33,11 +35,12 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.time.temporal.ChronoUnit
 import java.util.*
+import kotlin.math.abs
 import kotlin.math.ceil
 import kotlin.properties.Delegates
 import kotlin.system.exitProcess
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(), GestureDetector.OnGestureListener {
 
     private lateinit var binding: ActivityHomeBinding
     private lateinit var firebaseAuth: FirebaseAuth
@@ -52,6 +55,16 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var userProfile : Bitmap
     private var cardTotal by Delegates.notNull<Int>()
     val db = Firebase.firestore
+
+    private lateinit var gestureDetector : GestureDetector
+    var x2:Float = 0.0f
+    var x1:Float = 0.0f
+    var y2:Float = 0.0f
+    var y1:Float = 0.0f
+
+    companion object {
+        const val MIN_DISTANCE = 150
+    }
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -72,7 +85,6 @@ class HomeActivity : AppCompatActivity() {
 
         firebaseStorage = FirebaseStorage.getInstance()
         if(isLoginGoogle != null){
-            Log.v("jojojo","home login google " + isLoginGoogle.email.toString()  + " " + isLoginGoogle.displayName.toString() + " " + isLoginGoogle.photoUrl.toString())
             userEmail = isLoginGoogle.email.toString()
             db.collection("UserDetail").whereEqualTo("email", isLoginGoogle.email.toString()).get()
                 .addOnSuccessListener {
@@ -91,14 +103,12 @@ class HomeActivity : AppCompatActivity() {
             }
         }
         if(isLoginAuth != null){
-            Log.v("jojojo","home firebase auth " + isLoginAuth.email.toString())
             userEmail = isLoginAuth.email.toString()
             db.collection("UserDetail").whereEqualTo("email", isLoginAuth.email.toString()).get()
                 .addOnSuccessListener { documents ->
                 documents.forEach { document ->
                     userName = document.data.get("username").toString()
                     binding.displayUsername.setText("Hi, " + document.data.get("username").toString())
-                    Log.v("jojojo", "${document.data}")
                     val storageRef = firebaseStorage.reference.child("default/${document.data.get("picture").toString()}")
                     val localFile = File.createTempFile("profileImage","jpg")
                     storageRef.getFile(localFile).addOnSuccessListener {
@@ -109,6 +119,8 @@ class HomeActivity : AppCompatActivity() {
                 }
             }
         }
+
+        gestureDetector = GestureDetector(this, this)
 
         dailyCardProgress = binding.dailyCardProgressBar
         monthlyCardProgress = binding.monthlyCardProgressBar
@@ -125,15 +137,14 @@ class HomeActivity : AppCompatActivity() {
 
 
         fun calculateCharts () {
-            Log.v("jojojo", "recalculate $dailyCards $monthlyCards $targetDailyCards $targetMonthlyCards")
             var daily = ceil((dailyCards.toDouble() /targetDailyCards) * 100).toInt()
             var monthly = ceil((monthlyCards.toDouble() /targetMonthlyCards) * 100).toInt()
 
             dailyCardProgress.setProgressCompat(daily, true)
             monthlyCardProgress.setProgressCompat(monthly, true)
 
-            binding.dailyCardInformation.setText("${dailyCards}/${targetDailyCards} cards this day")
-            binding.monthlyCardInformation.setText("${monthlyCards}/${targetMonthlyCards} cards this month")
+            binding.dailyCardInformation.setText("${dailyCards}/${targetDailyCards} ${getString(R.string.daily_card_information)}")
+            binding.monthlyCardInformation.setText("${monthlyCards}/${targetMonthlyCards} ${getString(R.string.cards_this_month)}")
             binding.dailyCardPercentage.setText("${daily}%")
             binding.monthlyCardPercentage.setText("${monthly}%")
         }
@@ -158,8 +169,6 @@ class HomeActivity : AppCompatActivity() {
                     var currentTime = LocalDateTime.now()
                     val formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME
                     val fromDate = LocalDateTime.parse(doc.data.get("timestamp").toString(), formatter)
-                    Log.v("jojojo", "days: ${ChronoUnit.DAYS.between(fromDate, currentTime)}")
-                    Log.v("jojojo", "months: ${ChronoUnit.MONTHS.between(fromDate, currentTime)}")
                     if(ChronoUnit.DAYS.between(fromDate,currentTime) > 1) {
                         dailyCards -= 1
                     }
@@ -206,7 +215,6 @@ class HomeActivity : AppCompatActivity() {
         cardList = ArrayList()
         db.collection("Cards").addSnapshotListener { snap, e ->
             if( e != null) {
-                Log.v("jojojo", "errorr $e")
                 return@addSnapshotListener
             }
             cardTotal = Integer.parseInt(snap?.size().toString())
@@ -217,14 +225,13 @@ class HomeActivity : AppCompatActivity() {
                     val creator = dc.document.data.get("creator")
                     val question = dc.document.data.get("question")
                     val topic = dc.document.data.get("topic")
-                    Log.v("jojojo", "cards: $answer $created $creator $question $topic")
                     cardList.add(Card("$answer","$created","$creator","$question","$topic"))
                 }
             }
             cardList.sortBy { it.created }
             cardList.reverse()
-            if(cardList.size == 0) binding.latestCardText.setText("Cards is empty...")
-            else binding.latestCardText.setText("Latest cards")
+            if(cardList.size == 0) binding.latestCardText.setText("${getString(R.string.cards_is_empty)}...")
+            else binding.latestCardText.setText("${getString(R.string.latest_cards)}")
             cardAdapter = CardAdapter(cardList)
             cardRecycleView.adapter = cardAdapter
             cardAdapter.onItemClick = {
@@ -257,21 +264,45 @@ class HomeActivity : AppCompatActivity() {
             intent.putExtra("email", userEmail)
             startActivity(intent)
         }
-        binding.topBarHome.setOnClickListener{
-            Log.v("jojojo", "ke click tob bar")
-        }
-        binding.bottomBarHome.setOnClickListener{
-            Log.v("jojojo", "ke click bottom bar")
-        }
+
         binding.redirectToMemorization.setOnClickListener {
             if(cardTotal < 5) {
                 popUpModal("create ${5 - cardTotal} ${if(5 - cardTotal > 1) "cards" else "card"} to start memorize!!")
             } else {
                 startActivity(Intent(this, MemorizationStartActivity::class.java))
             }
-
         }
     }
+
+    override fun onTouchEvent(event: MotionEvent?): Boolean {
+        gestureDetector.onTouchEvent(event)
+        Log.v("jojojo", "on touch")
+
+        when(event?.action) {
+            0-> {
+                x1 = event.x
+                y1 = event.y
+            }
+            1-> {
+                x2 = event.x
+                y2 = event.y
+
+                val valueX:Float = x2-x1
+                val valueY:Float = y2-y1
+
+                if(abs(valueX) > MIN_DISTANCE) {
+                    if(x2 > x1) {
+                        Log.v("jojojo", "right swipe")
+                    } else {
+                        Log.v("jojojo", "left swipe")
+                    }
+                }
+            }
+        }
+
+        return super.onTouchEvent(event)
+    }
+
     override fun onBackPressed() {
         this.finish()
         finishAffinity()
@@ -340,5 +371,37 @@ class HomeActivity : AppCompatActivity() {
             startActivity(Intent(this, MyCardActivity::class.java))
             dialog.dismiss()
         }
+    }
+
+    override fun onDown(e: MotionEvent?): Boolean {
+        return false
+    }
+
+    override fun onShowPress(e: MotionEvent?) {
+    }
+
+    override fun onSingleTapUp(e: MotionEvent?): Boolean {
+        return false
+    }
+
+    override fun onScroll(
+        e1: MotionEvent?,
+        e2: MotionEvent?,
+        distanceX: Float,
+        distanceY: Float
+    ): Boolean {
+        return false
+    }
+
+    override fun onLongPress(e: MotionEvent?) {
+    }
+
+    override fun onFling(
+        e1: MotionEvent?,
+        e2: MotionEvent?,
+        velocityX: Float,
+        velocityY: Float
+    ): Boolean {
+        return false
     }
 }

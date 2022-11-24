@@ -43,7 +43,6 @@ class LoginActivity : AppCompatActivity() {
 
         val isLoginGoogle = GoogleSignIn.getLastSignedInAccount(this)
         if(isLoginGoogle != null){
-            Log.v("jojojo","uda login google " + isLoginGoogle.email.toString())
             var intent = Intent(this, HomeActivity::class.java)
             intent.putExtra("email", isLoginGoogle.email.toString())
             startActivity(intent)
@@ -53,7 +52,6 @@ class LoginActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         val isLoginAuth = firebaseAuth.currentUser
         if(isLoginAuth != null){
-            Log.v("jojojo","uda login firebase auth " + isLoginAuth.email.toString())
             var intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             finish()
@@ -62,18 +60,16 @@ class LoginActivity : AppCompatActivity() {
         binding.signInButton.setOnClickListener{
 
             progressDialog = ProgressDialog(this)
-            progressDialog.setMessage("verified your credential...")
+            progressDialog.setMessage("${getString(R.string.verified_your_credential)}...")
             progressDialog.setCancelable(false)
             progressDialog.show()
 
             val email = binding.emailInput.text.toString().trim()
             val password = binding.passwordInput.text.toString().trim()
 
-//            val email = findViewById<EditText>(R.id.email_input)
-
             if(email.isEmpty() || password.isEmpty()){
                 if(progressDialog.isShowing) progressDialog.dismiss()
-                popUpModal("all field must be filled!")
+                popUpModal("${getString(R.string.all_field_must_be_filled)}")
             }else {
                 Log.v("jojojo", email + " " + password)
                 firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener {
@@ -84,7 +80,7 @@ class LoginActivity : AppCompatActivity() {
                         finish()
                     } else {
                         if(progressDialog.isShowing) progressDialog.dismiss()
-                        popUpModal("invalid email or password!!")
+                        popUpModal("${getString(R.string.invalid_email_or_password)}")
                     }
                 }
             }
@@ -124,7 +120,7 @@ class LoginActivity : AppCompatActivity() {
     private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
             result ->
         progressDialog = ProgressDialog(this)
-        progressDialog.setMessage("verified your credential...")
+        progressDialog.setMessage("${getString(R.string.verified_your_credential)}...")
         progressDialog.setCancelable(false)
         progressDialog.show()
         if (result.resultCode == Activity.RESULT_OK){
@@ -132,7 +128,7 @@ class LoginActivity : AppCompatActivity() {
             handleResults(task)
         } else {
             if(progressDialog.isShowing) progressDialog.dismiss()
-            popUpModal("login canceled!!")
+            popUpModal("${getString(R.string.login_canceled)}!!")
         }
     }
 
@@ -164,7 +160,6 @@ class LoginActivity : AppCompatActivity() {
                                 "picture" to "default_picture.jpg"
                             )
                             db.collection("UserDetail").document(account.email.toString()).set(user).addOnSuccessListener { documentReference ->
-                                Log.v("jojojo", "New user is sign in with google, create UserDetail collection!!")
                             }.addOnCompleteListener { userDetail ->
                                 if(userDetail.isSuccessful) {
 
@@ -198,7 +193,6 @@ class LoginActivity : AppCompatActivity() {
                         }
                     } else {
                         if(progressDialog.isShowing) progressDialog.dismiss()
-                        Log.v("jojojo", "failed to get user detail collection")
                     }
                 }
             } else {

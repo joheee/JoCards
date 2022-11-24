@@ -109,7 +109,7 @@
                     android:layout_marginLeft="12dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/poppins_semi_bold"
-                    android:text="My card"
+                    android:text="@string/my_card"
                     android:textColor="@color/primaryColor"
                     android:textSize="16sp" />
 
@@ -150,7 +150,7 @@
                     android:layout_marginLeft="12dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/poppins_semi_bold"
-                    android:text="My target"
+                    android:text="@string/my_target"
                     android:textColor="@color/primaryColor"
                     android:textSize="16sp" />
 

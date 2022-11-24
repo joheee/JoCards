@@ -72,7 +72,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/poppins_semi_bold"
-                                android:text="You have created"
+                                android:text="@string/you_have_created"
                                 android:textAlignment="center"
                                 android:textColor="@color/primaryColor"
                                 android:textSize="24sp" />
@@ -264,7 +264,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/poppins_semi_bold"
-        android:text="My Cards"
+        android:text="@string/my_card"
         android:textColor="@color/primaryColor"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"

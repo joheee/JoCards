@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/poppins_medium"
-            android:text="Sign In"
+            android:text="@string/sign_in"
             android:textColor="@color/black"
             android:textSize="30sp" />
 
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="6dp"
             android:fontFamily="@font/poppins_regular"
-            android:text="If you don't have an account"
+            android:text="@string/if_you_don_t_have_an_account"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
@@ -96,7 +96,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Email"
+                android:text="@string/email"
                 android:textColor="@color/accentColor"
                 android:textSize="13sp" />
 
@@ -124,7 +124,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Password"
+                android:text="@string/password"
                 android:textColor="@color/accentColor"
                 android:textSize="13sp" />
 
@@ -135,7 +135,7 @@
                 android:autofillHints=""
                 android:ems="10"
                 android:fontFamily="@font/poppins_regular"
-                android:hint="Enter your password"
+                android:hint="@string/enter_your_password"
                 android:inputType="textPassword"
                 android:textSize="13sp" />
         </LinearLayout>
@@ -146,7 +146,7 @@
             android:layout_height="70dp"
             android:layout_marginBottom="20dp"
             android:backgroundTint="@color/secondaryColor"
-            android:text="Sign In"
+            android:text="@string/sign_in"
             android:textSize="24sp"
             app:cornerRadius="70dp"
             tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
@@ -159,7 +159,7 @@
             android:fontFamily="@font/poppins_medium"
             android:textSize="16sp"
 
-            android:text="or continue with" />
+            android:text="@string/or_continue_with" />
 
         <ImageView
             android:id="@+id/google_sign_in_button"

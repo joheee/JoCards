@@ -71,8 +71,8 @@ class MyCardActivity : AppCompatActivity() {
             dailyCardProgress.setProgressCompat(daily, true)
             monthlyCardProgress.setProgressCompat(monthly, true)
 
-            binding.dailyCardInformation.setText("${dailyCards}/${targetDailyCards} cards this day")
-            binding.monthlyCardInformation.setText("${monthlyCards}/${targetMonthlyCards} cards this month")
+            binding.dailyCardInformation.setText("${dailyCards}/${targetDailyCards} ${getString(R.string.daily_card_information)}")
+            binding.monthlyCardInformation.setText("${monthlyCards}/${targetMonthlyCards} ${getString(R.string.cards_this_month)}")
             binding.dailyCardPercentage.setText("${daily}%")
             binding.monthlyCardPercentage.setText("${monthly}%")
         }
@@ -139,8 +139,8 @@ class MyCardActivity : AppCompatActivity() {
                 }
                 cardList.sortBy { it.created }
                 cardList.reverse()
-                if(cardList.size == 0) binding.latestCardText.setText("My cards is empty...")
-                else binding.latestCardText.setText("My latest cards")
+                if(cardList.size == 0) binding.latestCardText.setText("${getString(R.string.My_cards_is_empty)}...")
+                else binding.latestCardText.setText("${getString(R.string.My_latest_cards)}")
                 cardAdapter = CardAdapter(cardList)
                 cardRecycleView.adapter = cardAdapter
                 cardAdapter.onItemClick = {

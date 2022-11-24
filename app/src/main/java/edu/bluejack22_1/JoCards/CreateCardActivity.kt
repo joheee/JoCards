@@ -65,7 +65,7 @@ class CreateCardActivity : AppCompatActivity() {
                             db.collection("Cards").add(card).addOnCompleteListener {
                                 if(it.isSuccessful) {
                                     if(progressDialog.isShowing) progressDialog.dismiss()
-                                    popUpModalCreateCard("new card has successfully created!!")
+                                    popUpModalCreateCard("${getString(R.string.new_card_has_successfully_created)}!")
                                 } else {
                                     if(progressDialog.isShowing) progressDialog.dismiss()
                                     Log.v("jojojo", it.exception.toString())
@@ -73,14 +73,14 @@ class CreateCardActivity : AppCompatActivity() {
                             }
                         } else {
                             if(progressDialog.isShowing) progressDialog.dismiss()
-                            popUpModal("question already being used!!")
+                            popUpModal("${getString(R.string.question_already_being_used)}!")
                         }
                     }
 
 
             } else {
                 if(progressDialog.isShowing) progressDialog.dismiss()
-                popUpModal("all field must be filled!!")
+                popUpModal("${getString(R.string.all_field_must_be_filled)}!")
             }
         }
     }

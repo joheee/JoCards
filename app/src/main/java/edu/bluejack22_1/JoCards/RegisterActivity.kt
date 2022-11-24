@@ -102,7 +102,7 @@ class RegisterActivity : AppCompatActivity() {
                                             db.collection("MonthlyCardTarget").document(email).set(monthlyCardTarget).addOnCompleteListener {
                                                 if(it.isSuccessful){
                                                     if(progressDialog.isShowing) progressDialog.dismiss()
-                                                    popUpModalSuccessRegister("success register ${username}" )
+                                                    popUpModalSuccessRegister("${getString(R.string.success_register)} ${username}" )
                                                 }
                                             }
                                         }
@@ -113,23 +113,23 @@ class RegisterActivity : AppCompatActivity() {
                             if(password.length < 6) {
                                 if(progressDialog.isShowing) progressDialog.dismiss()
                                 Log.v("jojojo","length passnya < 6")
-                                popUpModal("password must be 6 characters minimum!")
+                                popUpModal("${getString(R.string.password_must_be_6_characters_minimum)}!")
                             } else {
                                 if(progressDialog.isShowing) progressDialog.dismiss()
                                 Log.v("jojojo", "emailnya kepake")
-                                popUpModal("email already in use!")
+                                popUpModal("${getString(R.string.email_already_in_use)}!")
                             }
                         }
                     }
                 } else {
                     if(progressDialog.isShowing) progressDialog.dismiss()
                     Log.v("jojojo","pass and con pass not same")
-                    popUpModal("password are different from confirm password!")
+                    popUpModal("${getString(R.string.password_are_different_from_confirm_password)}!")
                 }
             } else {
                 if(progressDialog.isShowing) progressDialog.dismiss()
                 Log.v("jojojo","empty field!!")
-                popUpModal("all field must be filled!!")
+                popUpModal("${getString(R.string.all_field_must_be_filled)}!!")
             }
         }
 

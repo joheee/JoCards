@@ -210,7 +210,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="24dp"
                 android:fontFamily="@font/poppins_semi_bold"
-                android:text="Latest cards"
+                android:text="@string/latest_cards"
                 android:textColor="@color/accentColor"
                 android:textSize="16sp" />
 

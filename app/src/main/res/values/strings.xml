@@ -1,12 +1,87 @@
 <resources>
+<!--    login page-->
     <string name="app_name">JoCards</string>
     <string name="sign_in">Sign In</string>
-    <string name="if_you_don_t_have_an_account_register">If you don’t have an account register</string>
     <string name="you_can">You can</string>
-    <string name="sign_up">Sign up!</string>
+    <string name="sign_up_button">Sign up!</string>
     <string name="or_continue_with">or continue with</string>
     <string name="jocards_logo_in_white">JoCards Logo In White</string>
     <string name="google_button">Google Button</string>
     <string name="enter_your_email_address">Enter your email address</string>
     <string name="enter_your_password">Enter your password</string>
+    <string name="if_you_don_t_have_an_account">If you don\'t have an account</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+
+<!--modal information-->
+    <string name="verified_your_credential">verified your credential</string>
+    <string name="all_field_must_be_filled">all field must be filled!</string>
+    <string name="invalid_email_or_password">invalid email or password!!</string>
+    <string name="login_canceled">login canceled</string>
+    <string name="success_register">success register</string>
+    <string name="password_must_be_6_characters_minimum">password must be 6 characters minimum</string>
+    <string name="email_already_in_use">email already in use</string>
+    <string name="password_are_different_from_confirm_password">password are different from confirm password</string>
+    <string name="must_picked_5_cards">must picked 5 cards</string>
+    <string name="question_already_being_used">question already being used</string>
+    <string name="new_card_has_successfully_created">new card has successfully created</string>
+    <string name="success_update_daily_and_monthly_target">success update daily and monthly target</string>
+    <string name="daily_target_must_be_smaller_than_monthly_target">daily target must be smaller than monthly target</string>
+
+
+    <!--    register page-->
+    <string name="sign_up">Sign Up</string>
+    <string name="if_you_already_have_an_account">If you already have an account</string>
+    <string name="sign_in_button">sign in!</string>
+    <string name="username">Username</string>
+    <string name="enter_your_desired_username">Enter your desired username</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="confirm_your_password">Confirm your password</string>
+
+
+<!--    home page-->
+    <string name="latest_cards">Latest cards</string>
+    <string name="cards_is_empty">Cards is empty</string>
+    <string name="daily_card_information">cards this day</string>
+    <string name="cards_this_month">cards this month</string>
+    <string name="my_card">My card</string>
+    <string name="my_target">My target</string>
+
+
+<!--    my profile page-->
+    <string name="you_have_created">You have created</string>
+    <string name="sign_out">sign out</string>
+    <string name="my_profile">My Profile</string>
+    <string name="profile">Profile</string>
+    <string name="setting">Setting</string>
+
+
+<!--    create card page-->
+    <string name="new_card">New Card</string>
+    <string name="topic">Topic</string>
+    <string name="enter_the_card_topic">Enter the card topic</string>
+    <string name="question">Question</string>
+    <string name="enter_the_card_question">Enter the card question</string>
+    <string name="answer">Answer</string>
+    <string name="enter_the_card_answer">Enter the card answer</string>
+    <string name="create_card">Create card</string>
+
+
+<!--    edit card page-->
+    <string name="edit_card_topic">Edit card topic</string>
+    <string name="set_edit_card_topic">set edit card topic</string>
+    <string name="edit_card_question">Edit card question</string>
+    <string name="set_edit_card_question">set edit card question</string>
+    <string name="edit_card_answer">Edit card answer</string>
+    <string name="set_edit_card_answer">set edit card answer</string>
+
+<!--    my target page-->
+    <string name="daily_card_target">Daily card target</string>
+    <string name="monthly_card_target">Monthly card target</string>
+
+
+<!--    my card page-->
+    <string name="My_cards_is_empty">My cards is empty</string>
+    <string name="My_latest_cards">My latest cards</string>
+
 </resources>

@@ -54,7 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Edit card topic"
+                android:text="@string/edit_card_topic"
                 android:textColor="@color/accentColor"
                 android:textSize="16sp" />
 
@@ -65,7 +65,7 @@
                 android:autofillHints=""
                 android:ems="10"
                 android:fontFamily="@font/poppins_regular"
-                android:hint="set edit card topic"
+                android:hint="@string/set_edit_card_topic"
                 android:inputType="text"
                 android:textColorLink="#FF5F9DF7"
                 android:textSize="13sp" />
@@ -83,7 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Edit card question"
+                android:text="@string/edit_card_question"
                 android:textColor="@color/accentColor"
                 android:textSize="16sp" />
 
@@ -94,7 +94,7 @@
                 android:autofillHints=""
                 android:ems="10"
                 android:fontFamily="@font/poppins_regular"
-                android:hint="set edit card question"
+                android:hint="@string/set_edit_card_question"
                 android:inputType="text"
                 android:textSize="13sp" />
         </LinearLayout>
@@ -111,7 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Edit card answer"
+                android:text="@string/edit_card_answer"
                 android:textColor="@color/accentColor"
                 android:textSize="16sp" />
 
@@ -122,7 +122,7 @@
                 android:autofillHints=""
                 android:ems="10"
                 android:fontFamily="@font/poppins_regular"
-                android:hint="set edit card answer"
+                android:hint="@string/set_edit_card_answer"
                 android:inputType="text"
                 android:textSize="13sp" />
         </LinearLayout>

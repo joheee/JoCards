@@ -23,7 +23,7 @@
         android:layout_marginTop="24dp"
         android:layout_weight="1"
         android:fontFamily="@font/poppins_semi_bold"
-        android:text="My Target"
+        android:text="@string/my_target"
         android:textColor="@color/accentColor"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -125,7 +125,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semi_bold"
-                    android:text="You have created"
+                    android:text="@string/you_have_created"
                     android:textAlignment="center"
                     android:textColor="@color/primaryColor"
                     android:textSize="24sp" />
@@ -210,7 +210,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Daily card target"
+                android:text="@string/daily_card_target"
                 android:textColor="@color/accentColor"
                 android:textSize="16sp" />
 
@@ -241,7 +241,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Monthly card target"
+                android:text="@string/monthly_card_target"
                 android:textColor="@color/accentColor"
                 android:textSize="16sp" />
 

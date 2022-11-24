@@ -16,7 +16,8 @@
         <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/activity_card_detail.xml" value="0.16" />
         <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/activity_closing.xml" value="0.2828649138712602" />
         <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/activity_create_card.xml" value="0.33" />
-        <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/activity_edit_card.xml" value="0.22" />
+        <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/activity_dummy_view_pager.xml" value="0.24206708975521304" />
+        <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/activity_edit_card.xml" value="0.33" />
         <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/activity_home.xml" value="0.405982905982906" />
         <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/activity_land_memorization.xml" value="0.20307823856348867" />
         <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/activity_login.xml" value="0.33" />
@@ -25,12 +26,14 @@
         <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/activity_memorization_start.xml" value="0.75" />
         <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/activity_memorization_starting.xml" value="0.25" />
         <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/activity_my_card.xml" value="0.5" />
-        <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/activity_profile.xml" value="0.33" />
-        <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/activity_register.xml" value="0.33" />
+        <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/activity_profile.xml" value="0.25" />
+        <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/activity_register.xml" value="0.22" />
         <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/activity_sidebar.xml" value="0.5" />
-        <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/activity_target.xml" value="0.33" />
+        <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/activity_target.xml" value="0.25" />
         <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/each_card.xml" value="0.33" />
         <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/each_card_memorization.xml" value="0.5" />
+        <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/fragment_first_profile.xml" value="0.19" />
+        <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/fragment_second_profile.xml" value="0.33" />
         <entry key="..\:/slc/tpa/mobile/JoCards/app/src/main/res/layout/modal_notification.xml" value="0.25" />
       </map>
     </option>

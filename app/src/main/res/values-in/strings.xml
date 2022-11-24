@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    login page-->
+    <string name="app_name">JoCards</string>
+    <string name="sign_in">Sign In</string>
+    <string name="if_you_don_t_have_an_account">Jika Anda tidak memiliki akun</string>
+    <string name="you_can">Anda dapat</string>
+    <string name="sign_up_button">mendaftar sekarang!</string>
+    <string name="or_continue_with">atau lanjutkan dengan</string>
+    <string name="jocards_logo_in_white">JoCards Logo In White</string>
+    <string name="google_button">Google Button</string>
+    <string name="enter_your_email_address">Masukkan alamat email</string>
+    <string name="enter_your_password">Masukkan password</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+
+    <!--modal information-->
+    <string name="verified_your_credential">memverifikasi kredensial Anda</string>
+    <string name="all_field_must_be_filled">semua input harus diisi!</string>
+    <string name="invalid_email_or_password">email atau password invalid!!</string>
+    <string name="login_canceled">login dibatalkan</string>
+    <string name="success_register">sukses mendaftarkan</string>
+    <string name="password_must_be_6_characters_minimum">kata sandi harus minimal 6 karakter</string>
+    <string name="email_already_in_use">email telah digunakan</string>
+    <string name="password_are_different_from_confirm_password">kata sandi berbeda dari konfirmasi kata sandi</string>
+    <string name="must_picked_5_cards">pilih minimal 5 kartu</string>
+    <string name="question_already_being_used">pertanyaan telah digunakan</string>
+    <string name="new_card_has_successfully_created">Flash card baru berhasil dibuat</string>
+    <string name="success_update_daily_and_monthly_target">target harian dan bulanan berhasil diperbarui</string>
+    <string name="daily_target_must_be_smaller_than_monthly_target">target harian harus lebih kecil dari target bulanan</string>
+
+
+    <!--    register page-->
+    <string name="sign_up">Sign Up</string>
+    <string name="if_you_already_have_an_account">Jika Anda sudah memiliki akun</string>
+    <string name="sign_in_button">sign in!</string>
+    <string name="username">Username</string>
+    <string name="enter_your_desired_username">Masukkan username</string>
+    <string name="confirm_password">Konfirmasi Password</string>
+    <string name="confirm_your_password">Masukkan kembali passwordmu</string>
+
+
+    <!--    home page-->
+    <string name="latest_cards">Flash card terbaru</string>
+    <string name="cards_is_empty">Card kosong</string>
+    <string name="daily_card_information">kartu hari ini</string>
+    <string name="cards_this_month">kartu bulan ini</string>
+    <string name="my_card">Flash card saya</string>
+    <string name="my_target">Target saya</string>
+
+
+    <!--    my profile page-->
+    <string name="you_have_created">Kamu telah membuat</string>
+    <string name="sign_out">sign out</string>
+    <string name="my_profile">Profil saya</string>
+    <string name="profile">Profil</string>
+    <string name="setting">Pengaturan</string>
+
+
+    <!--    create card-->
+    <string name="new_card">Buat Flash Card</string>
+    <string name="topic">Topik</string>
+    <string name="enter_the_card_topic">Masukkan topik kartu</string>
+    <string name="question">Pertanyaan</string>
+    <string name="enter_the_card_question">Masukkan pertanyaan pada kartu</string>
+    <string name="answer">Jawaban</string>
+    <string name="enter_the_card_answer">Masukkan jawaban pada kartu</string>
+    <string name="create_card">buat kartu</string>
+
+
+    <!--    edit card page-->
+    <string name="edit_card_topic">Edit card topic</string>
+    <string name="set_edit_card_topic">set edit card topic</string>
+    <string name="edit_card_question">Edit card question</string>
+    <string name="set_edit_card_question">set edit card question</string>
+    <string name="edit_card_answer">Edit card answer</string>
+    <string name="set_edit_card_answer">set edit card answer</string>
+
+
+    <!--    my target page-->
+    <string name="daily_card_target">Target flash card hari ini</string>
+    <string name="monthly_card_target">Target flash card bulan ini</string>
+
+
+    <!--    my card page-->
+    <string name="My_cards_is_empty">Flash card saya kosong</string>
+    <string name="My_latest_cards">Flash card terbaru <saya></saya></string>
+</resources>
