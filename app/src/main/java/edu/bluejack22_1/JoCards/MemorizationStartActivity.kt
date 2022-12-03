@@ -72,21 +72,21 @@ class MemorizationStartActivity : AppCompatActivity() {
 
             Memorization.memorizationArr.clear()
             binding.cardSelectedIndicator.setText("${Memorization.memorizationArr.size}/5 " +
-                    "${if(Memorization.memorizationArr.size > 1) "cards"  else "card"} selected")
+                    "${if(Memorization.memorizationArr.size > 1) "${getString(R.string.card_plural)}"  else "${getString(R.string.card_singular)}"} ${getString(R.string.selected)}")
 
             cardMemorizationAdapter.onItemClick = {
                 if(Memorization.memorizationArr.filter { s -> s == it.question }.isEmpty()) {
                     if(Memorization.memorizationArr.size < 5) {
                         Memorization.memorizationArr.add(it.question)
                         binding.cardSelectedIndicator.setText("${Memorization.memorizationArr.size}/5 " +
-                                "${if(Memorization.memorizationArr.size > 1) "cards"  else "card"} selected")
+                                "${if(Memorization.memorizationArr.size > 1) "${getString(R.string.card_plural)}"  else "${getString(R.string.card_singular)}"} ${getString(R.string.selected)}")
                     } else {
                         popUpModal("already pick 5 cards")
                     }
                 } else {
                     Memorization.memorizationArr.remove(it.question)
                     binding.cardSelectedIndicator.setText("${Memorization.memorizationArr.size}/5 " +
-                            "${if(Memorization.memorizationArr.size > 1) "cards"  else "card"} selected")
+                            "${if(Memorization.memorizationArr.size > 1) "${getString(R.string.card_plural)}"  else "${getString(R.string.card_singular)}"} ${getString(R.string.selected)}")
                 }
                 Log.v("jojojo", "list ${Memorization.memorizationArr}")
             }
@@ -148,7 +148,7 @@ class MemorizationStartActivity : AppCompatActivity() {
             }
         }
         if(filteredList.isEmpty()){
-            Toast.makeText(this, "no data found", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "${getString(R.string.no_data_found)}", Toast.LENGTH_SHORT).show()
         } else {
             cardMemorizationAdapter.setCardList(filteredList)
         }

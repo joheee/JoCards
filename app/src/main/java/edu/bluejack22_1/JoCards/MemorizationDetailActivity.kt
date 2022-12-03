@@ -92,12 +92,12 @@ class MemorizationDetailActivity : AppCompatActivity() {
                 db.collection("UserCardLog").add(userCardLog).addOnCompleteListener {
                     if(it.isSuccessful) {
                         Memorization.curr += 1
-                        popUpModal("success finish ${Memorization.curr} ${if(Memorization.curr > 1) "cards" else "card"} today!!")
+                        popUpModal("${getString(R.string.success_finish)} ${Memorization.curr} ${if(Memorization.curr > 1) "${getString(R.string.card_plural)}" else "${getString(R.string.card_singular)}"} ${getString(R.string.today)}!!")
 
                     }
                 }
             } else {
-                popUpModal("success finish ${Memorization.curr} ${if(Memorization.curr > 1) "cards" else "card"} today!!")
+                popUpModal("${getString(R.string.success_finish)} ${Memorization.curr} ${if(Memorization.curr > 1) "${getString(R.string.card_plural)}" else "${getString(R.string.card_singular)}"} ${getString(R.string.today)}!!")
             }
         }
 

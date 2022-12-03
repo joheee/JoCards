@@ -169,10 +169,11 @@ class HomeActivity : AppCompatActivity(), GestureDetector.OnGestureListener {
                     var currentTime = LocalDateTime.now()
                     val formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME
                     val fromDate = LocalDateTime.parse(doc.data.get("timestamp").toString(), formatter)
-                    if(ChronoUnit.DAYS.between(fromDate,currentTime) > 1) {
+                    if(ChronoUnit.DAYS.between(fromDate,currentTime) > 0) {
                         dailyCards -= 1
+                        Log.v("jojojo","is expired daily card")
                     }
-                    if(ChronoUnit.MONTHS.between(fromDate, currentTime) > 1) {
+                    if(ChronoUnit.MONTHS.between(fromDate, currentTime) > 0) {
                         monthlyCards -= 1
                     }
                 }
@@ -267,7 +268,7 @@ class HomeActivity : AppCompatActivity(), GestureDetector.OnGestureListener {
 
         binding.redirectToMemorization.setOnClickListener {
             if(cardTotal < 5) {
-                popUpModal("create ${5 - cardTotal} ${if(5 - cardTotal > 1) "cards" else "card"} to start memorize!!")
+                popUpModal("${getString(R.string.create)} ${5 - cardTotal} ${if(5 - cardTotal > 1) "${getString(R.string.card_plural)}" else "${getString(R.string.card_singular)}"} ${getString(R.string.to_start_memorize)}!!")
             } else {
                 startActivity(Intent(this, MemorizationStartActivity::class.java))
             }

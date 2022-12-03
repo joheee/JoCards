@@ -76,14 +76,14 @@ class EditCardActivity : AppCompatActivity() {
                         if(progressDialog.isShowing) progressDialog.dismiss()
                         if(it.isSuccessful) {
                             binding.cardTopic.setText(topic)
-                            popUpModal("success update card!!")
+                            popUpModal("${getString(R.string.success_update_card)}!!")
                         } else {
                             Log.v("jojojo", "${cardId} error update ${it.exception}")
                         }
                     }
                 } else {
                     if(progressDialog.isShowing) progressDialog.dismiss()
-                    popUpModal("question already being used!!")
+                    popUpModal("${getString(R.string.question_already_being_used)}!!")
                 }
             }
         }

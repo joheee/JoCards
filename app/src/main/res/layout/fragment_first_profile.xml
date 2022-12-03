@@ -10,14 +10,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:foregroundGravity="center"
-        android:paddingTop="70dp">
+        android:foregroundGravity="center">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/edit_user_picture"
@@ -60,7 +64,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_medium"
-                    android:text="Edit full name"
+                    android:text="@string/edit_full_name"
                     android:textColor="@color/accentColor"
                     android:textSize="16sp" />
 
@@ -90,7 +94,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_medium"
-                    android:text="Edit username"
+                    android:text="@string/edit_username"
                     android:textColor="@color/accentColor"
                     android:textSize="16sp" />
 
@@ -116,7 +120,7 @@
                 android:layout_marginBottom="24dp"
                 android:height="70dp"
                 android:backgroundTint="@color/greenColor"
-                android:text="update profile"
+                android:text="@string/update_profile"
                 android:textSize="24sp"
                 app:cornerRadius="70dp" />
 

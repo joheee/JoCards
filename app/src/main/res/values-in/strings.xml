@@ -51,7 +51,7 @@
 
     <!--    my profile page-->
     <string name="you_have_created">Kamu telah membuat</string>
-    <string name="sign_out">sign out</string>
+    <string name="sign_out">keluar</string>
     <string name="my_profile">Profil saya</string>
     <string name="profile">Profil</string>
     <string name="setting">Pengaturan</string>
@@ -69,11 +69,11 @@
 
 
     <!--    edit card page-->
-    <string name="edit_card_topic">Edit card topic</string>
+    <string name="edit_card_topic">Edit topik kartu</string>
     <string name="set_edit_card_topic">set edit card topic</string>
-    <string name="edit_card_question">Edit card question</string>
+    <string name="edit_card_question">Edit pertanyaan pada kartu</string>
     <string name="set_edit_card_question">set edit card question</string>
-    <string name="edit_card_answer">Edit card answer</string>
+    <string name="edit_card_answer">Edit jawaban kartu</string>
     <string name="set_edit_card_answer">set edit card answer</string>
 
 
@@ -85,4 +85,32 @@
     <!--    my card page-->
     <string name="My_cards_is_empty">Flash card saya kosong</string>
     <string name="My_latest_cards">Flash card terbaru <saya></saya></string>
+    <string name="navigation">Navigasi</string>
+
+    <string name="edit_full_name">Edit nama lengkap</string>
+    <string name="edit_username">Edit nama panggilan</string>
+    <string name="update_profile">perbarui profil</string>
+    <string name="success_update_user">berhasil memperbarui informasi pengguna</string>
+    <string name="flip_card">Balik Kartu</string>
+
+    <string name="update_card">perbarui kartu</string>
+    <string name="delete_card">hapus kartu</string>
+    <string name="success_update_card">kartu berhasil diperbarui</string>
+    <string name="search_cards">cari kartu…</string>
+    <string name="no_data_found">data tidak ditemukan</string>
+    <string name="selected">dipilih</string>
+    <string name="card_singular">kartu</string>
+    <string name="card_plural">kartu</string>
+    <string name="memorize">bermain</string>
+    <string name="flip">balik</string>
+    <string name="next">lanjut</string>
+    <string name="finish">selesai</string>
+
+
+    <string name="success_finish">berhasil menyelesaikan</string>
+    <string name="today">hari ini</string>
+    <string name="update">perbarui</string>
+
+    <string name="create">buat</string>
+    <string name="to_start_memorize">untuk mulai bermain</string>
 </resources>

@@ -102,7 +102,7 @@ class FirstProfileFragment : Fragment() {
                 ).addOnCompleteListener {
                     if(it.isSuccessful) {
                         if(progressDialog.isShowing) progressDialog.dismiss()
-                        popUpModal("success update user!!")
+                        popUpModal("${getString(R.string.success_update_user)}!!")
                     }
                 }
             } else {

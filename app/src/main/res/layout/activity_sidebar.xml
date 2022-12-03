@@ -178,7 +178,7 @@
         android:layout_marginTop="24dp"
         android:layout_weight="1"
         android:fontFamily="@font/poppins_semi_bold"
-        android:text="Navigation"
+        android:text="@string/navigation"
         android:textColor="@color/primaryColor"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"

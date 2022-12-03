@@ -267,7 +267,7 @@
             android:layout_marginBottom="10dp"
             android:height="70dp"
             android:backgroundTint="@color/secondaryColor"
-            android:text="update"
+            android:text="@string/update"
             android:textSize="24sp"
             app:cornerRadius="70dp" />
 

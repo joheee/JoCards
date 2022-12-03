@@ -83,5 +83,31 @@
 <!--    my card page-->
     <string name="My_cards_is_empty">My cards is empty</string>
     <string name="My_latest_cards">My latest cards</string>
+    <string name="navigation">Navigation</string>
 
+    <string name="edit_full_name">Edit full name</string>
+    <string name="edit_username">Edit username</string>
+    <string name="update_profile">update profile</string>
+
+    <string name="success_update_user">success update user</string>
+    <string name="flip_card">Flip Card</string>
+    <string name="update_card">update card</string>
+    <string name="delete_card">delete card</string>
+    <string name="success_update_card">success update card</string>
+    <string name="search_cards">Search cards…</string>
+    <string name="no_data_found">no data found</string>
+    <string name="selected">selected</string>
+    <string name="card_singular">card</string>
+    <string name="card_plural">cards</string>
+    <string name="memorize">play</string>
+    <string name="flip">flip</string>
+    <string name="next">next</string>
+    <string name="finish">finish</string>
+
+    <string name="success_finish">success finish</string>
+    <string name="today">today</string>
+    <string name="update">update</string>
+
+    <string name="create">create</string>
+    <string name="to_start_memorize">to start memorize</string>
 </resources>

@@ -108,10 +108,10 @@ class TargetActivity : AppCompatActivity() {
                     val fromDate = LocalDateTime.parse(doc.data.get("timestamp").toString(), formatter)
                     Log.v("jojojo", "days: ${ChronoUnit.DAYS.between(fromDate, currentTime)}")
                     Log.v("jojojo", "months: ${ChronoUnit.MONTHS.between(fromDate, currentTime)}")
-                    if(ChronoUnit.DAYS.between(fromDate,currentTime) > 1) {
+                    if(ChronoUnit.DAYS.between(fromDate,currentTime) > 0) {
                         dailyCards -= 1
                     }
-                    if(ChronoUnit.MONTHS.between(fromDate, currentTime) > 1) {
+                    if(ChronoUnit.MONTHS.between(fromDate, currentTime) > 0) {
                         monthlyCards -= 1
                     }
                 }
